@@ -1,6 +1,7 @@
 const cheerio = require('cheerio');
 const axios = require('axios');
 const fs = require('fs');
+const { spawn } = require('child_process');
 let $;
 
 async function get() {
@@ -39,7 +40,19 @@ get().then(_$ => {
             dj[today].firstTotal = parseInt(toplamAsi);
         }
         dj[today].lastTotal = parseInt(toplamAsi);
-        console.log('Yazılan ', dj[today]);
-        fs.writeFileSync('../data.json', JSON.stringify(dj));
+    } else {
+        dj[toda] = {
+            firstTotal: parseInt(toplamAsi),
+            lastTotal: parseInt(toplamAsi)
+        }
     }
+    console.log('Yazılan ', dj[today]);        
+    fs.writeFileSync('../data.json', JSON.stringify(dj));
+    let gt;
+    spawn('git', ['add', '../data.json']);
+    gt = spawn('git', ['commit', '-m', '\'' + today + ' data update\'']);        
+    spawn('git', ['push', '--set-upstream', 'origin', 'master']);
+    gt.stdout.on('data', (data) => {
+        console.error(data.toString());
+    });
 });
