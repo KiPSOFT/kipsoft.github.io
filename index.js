@@ -1,3 +1,4 @@
+
 document.addEventListener('DOMContentLoaded', function () {
     Vue.component('counter', async () => {
         const template = `<div>
