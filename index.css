@@ -1,0 +1,26 @@
+[v-cloak] {display: none}
+
+html {
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body {
+    background: #f0f0f0;
+    height: 100vh;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Menlo, Andale Mono, monospace;
+    font-size: 100px;
+    color: #444;
+    line-height: 1;
+    text-shadow: 14px 2px 10px #ccc;
+    height: 100%;
+}
