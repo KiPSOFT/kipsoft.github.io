@@ -32,7 +32,8 @@ get().then(_$ => {
     const today = (new Date()).toLocaleDateString('tr-TR', {
         year: 'numeric',
         month: '2-digit',
-        day: 'numeric'
+        day: 'numeric',
+        timeZone: 'Europe/Istanbul'
     });
     if (dj[today]) {
         console.log('Okunan ', dj[today]);
