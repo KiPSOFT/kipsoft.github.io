@@ -5,13 +5,8 @@ document.addEventListener('DOMContentLoaded', function () {
                     <p class="container">{{ vaccineCount }}</p>
                    </div>`;
         try {
-            const data = { "19.04.2021": {
-                "vaccineCount": 0,
-                "lastCheckTime": "00:00"
-            }};
-            /*
             const result = await fetch('data.json');
-            const data = await result.json(); */
+            const data = await result.json();
             const today = (new Date()).toLocaleDateString('tr-TR', {
                 year: 'numeric',
                 month: '2-digit',
