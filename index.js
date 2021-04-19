@@ -15,7 +15,7 @@ document.addEventListener('DOMContentLoaded', function () {
             });
             const val = {
                 date: today,
-                vaccineCount: data[today].vaccineCount
+                vaccineCount: data[today].lastTotal - data[today].firstTotal
             };
             return {
                 template,
