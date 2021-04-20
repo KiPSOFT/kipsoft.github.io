@@ -53,8 +53,8 @@ get().then(_$ => {
     fs.writeFileSync('../data.json', JSON.stringify(dj));
     let gt;
     spawn('git', ['add', '../data.json']);
-    gt = spawn('git', ['commit', '-m', '\'' + today + ' data update\'']);        
-    spawn('git', ['push', '--set-upstream', 'origin', 'master']);
+    spawn('git', ['commit', '-m', '\'' + today + ' data update\'']);        
+    gt = spawn('git', ['push', '--set-upstream', 'origin', 'master']);
     gt.stdout.on('data', (data) => {
         console.error(data.toString());
     });
