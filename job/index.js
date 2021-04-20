@@ -41,10 +41,12 @@ get().then(_$ => {
             dj[today].firstTotal = parseInt(toplamAsi);
         }
         dj[today].lastTotal = parseInt(toplamAsi);
+	dj[today].lastUpdate = (new Date()).toLocaleDateString('tr-TR');
     } else {
         dj[today] = {
             firstTotal: parseInt(toplamAsi),
-            lastTotal: parseInt(toplamAsi)
+            lastTotal: parseInt(toplamAsi),
+	    lastUpdate: (new Date()).toLocaleDateString('tr-TR')
         }
     }
     console.log('Yazılan ', dj[today]);        
