@@ -42,7 +42,7 @@ get().then(_$ => {
         }
         dj[today].lastTotal = parseInt(toplamAsi);
     } else {
-        dj[toda] = {
+        dj[today] = {
             firstTotal: parseInt(toplamAsi),
             lastTotal: parseInt(toplamAsi)
         }
