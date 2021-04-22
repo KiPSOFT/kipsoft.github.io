@@ -29,12 +29,12 @@ get().then(_$ => {
     console.log('Birinci doz aşı sayısı', birinciDoz);
     console.log('Birinci doz aşı sayısı', ikinciDoz);
     const dj = JSON.parse(fs.readFileSync('../data.json'));
-    const today = (new Date()).toLocaleDateString('tr-TR', {
+    const today = new Intl.DateTimeFormat('tr', { 
         year: 'numeric',
         month: '2-digit',
         day: 'numeric',
         timeZone: 'Europe/Istanbul'
-    });
+    }).format(new Date());
     if (dj[today]) {
         console.log('Okunan ', dj[today]);
         if (dj[today].firstTotal === 0) {
@@ -49,8 +49,9 @@ get().then(_$ => {
 	    lastUpdate: (new Date()).toLocaleDateString('tr-TR')
         }
     }
-    console.log('Yazılan ', dj[today]);        
+    console.log('Yazılan ', dj[today]);
     fs.writeFileSync('../data.json', JSON.stringify(dj));
+    /*
     let gt;
     spawn('git', ['add', '../data.json']);
     spawn('git', ['commit', '-m', '\'' + today + ' data update\'']);        
@@ -58,4 +59,5 @@ get().then(_$ => {
     gt.stdout.on('data', (data) => {
         console.error(data.toString());
     });
+    */
 });
