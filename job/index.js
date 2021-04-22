@@ -35,6 +35,7 @@ get().then(_$ => {
         day: 'numeric',
         timeZone: 'Europe/Istanbul'
     }).format(new Date());
+    console.log('Tarih:', today);
     if (dj[today]) {
         console.log('Okunan ', dj[today]);
         if (dj[today].firstTotal === 0) {
