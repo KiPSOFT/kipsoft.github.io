@@ -30,14 +30,6 @@ get().then(_$ => {
     console.log('Birinci doz aşı sayısı', birinciDoz);
     console.log('Birinci doz aşı sayısı', ikinciDoz);
     const dj = JSON.parse(fs.readFileSync('../data.json'));
-    /*
-    const today = new Intl.DateTimeFormat('tr', { 
-        year: 'numeric',
-        month: '2-digit',
-        day: 'numeric',
-        timeZone: 'Europe/Istanbul'
-    }).format(new Date());
-    */
     const today = DateTime.now().setZone('Europe/Istanbul').toFormat('dd.MM.yyyy');
     console.log('Tarih:', today);
     if (dj[today]) {
@@ -46,22 +38,14 @@ get().then(_$ => {
             dj[today].firstTotal = parseInt(toplamAsi);
         }
         dj[today].lastTotal = parseInt(toplamAsi);
-	dj[today].lastUpdate = (new Date()).toLocaleDateString('tr-TR');
+	    dj[today].lastUpdate = DateTime.now().setZone('Europe/Istanbul').toFormat('hh:mm:ss');
     } else {
         dj[today] = {
             firstTotal: parseInt(toplamAsi),
             lastTotal: parseInt(toplamAsi),
-	    lastUpdate: (new Date()).toLocaleDateString('tr-TR')
+	        lastUpdate: DateTime.now().setZone('Europe/Istanbul').toFormat('hh:mm:ss')
         }
     }
     console.log('Yazılan ', dj[today]);
     fs.writeFileSync('../data.json', JSON.stringify(dj));
-    /*
-    let gt;
-    spawn('git', ['add', '../data.json']);
-    spawn('git', ['commit', '-m', '\'' + today + ' data update\'']);        
-    gt = spawn('git', ['push', '--set-upstream', 'origin', 'master']);
-    gt.stdout.on('data', (data) => {
-        console.error(data.toString());
-    });*/
 });
