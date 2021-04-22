@@ -1,7 +1,7 @@
 const cheerio = require('cheerio');
 const axios = require('axios');
 const fs = require('fs');
-const { spawn } = require('child_process');
+const { spawnSync } = require('child_process');
 const { DateTime } = require("luxon");
 let $;
 
@@ -63,6 +63,5 @@ get().then(_$ => {
     gt = spawn('git', ['push', '--set-upstream', 'origin', 'master']);
     gt.stdout.on('data', (data) => {
         console.error(data.toString());
-    });
-    */
+    });*/
 });
