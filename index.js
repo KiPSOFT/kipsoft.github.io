@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const template = `<div>
                     <p class="container">{{ date }}</p>
                     <p class="container">{{ vaccineCount }}</p>
+                    <p class="container" style="font-size: 10px">Son güncellenme zamanı: {{ lastUpdate }}</p>
                    </div>`;
     try {
       const result = await fetch("data.json");
@@ -21,6 +22,7 @@ document.addEventListener("DOMContentLoaded", function () {
         vaccineCount: numberWithCommas(
           data[today].lastTotal - data[today].firstTotal
         ),
+        lastUpdate: data[today].lastUpdate ? data[today].lastUpdate : '23:59:59'
       };
       return {
         template,
