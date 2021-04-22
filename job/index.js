@@ -2,6 +2,7 @@ const cheerio = require('cheerio');
 const axios = require('axios');
 const fs = require('fs');
 const { spawn } = require('child_process');
+const { DateTime } = require("luxon");
 let $;
 
 async function get() {
@@ -29,12 +30,15 @@ get().then(_$ => {
     console.log('Birinci doz aşı sayısı', birinciDoz);
     console.log('Birinci doz aşı sayısı', ikinciDoz);
     const dj = JSON.parse(fs.readFileSync('../data.json'));
+    /*
     const today = new Intl.DateTimeFormat('tr', { 
         year: 'numeric',
         month: '2-digit',
         day: 'numeric',
         timeZone: 'Europe/Istanbul'
     }).format(new Date());
+    */
+    const today = DateTime.now().toFormat('dd.MM.yyyy');
     console.log('Tarih:', today);
     if (dj[today]) {
         console.log('Okunan ', dj[today]);
