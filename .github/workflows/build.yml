@@ -30,7 +30,7 @@ jobs:
       - name: Commit files
         run: |
           git config --local user.name  ${{ github.actor }}
-          git add ../data.json
+          git add ./data.json
           git commit -m 'Data update'
 
       - name: Push changes
