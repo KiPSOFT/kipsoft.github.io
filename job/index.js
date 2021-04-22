@@ -38,7 +38,7 @@ get().then(_$ => {
         timeZone: 'Europe/Istanbul'
     }).format(new Date());
     */
-    const today = DateTime.now().toFormat('dd.MM.yyyy');
+    const today = DateTime.now().setZone('Europe/Istanbul').toFormat('dd.MM.yyyy');
     console.log('Tarih:', today);
     if (dj[today]) {
         console.log('Okunan ', dj[today]);
