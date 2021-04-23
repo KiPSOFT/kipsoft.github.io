@@ -38,12 +38,12 @@ get().then(_$ => {
             dj[today].firstTotal = parseInt(toplamAsi);
         }
         dj[today].lastTotal = parseInt(toplamAsi);
-	    dj[today].lastUpdate = DateTime.now().setZone('Europe/Istanbul').toFormat('hh:mm:ss');
+	    dj[today].lastUpdate = DateTime.now().setZone('Europe/Istanbul').toFormat('HH:mm:ss');
     } else {
         dj[today] = {
             firstTotal: parseInt(toplamAsi),
             lastTotal: parseInt(toplamAsi),
-	        lastUpdate: DateTime.now().setZone('Europe/Istanbul').toFormat('hh:mm:ss')
+	        lastUpdate: DateTime.now().setZone('Europe/Istanbul').toFormat('HH:mm:ss')
         }
     }
     console.log('Yazılan ', dj[today]);
