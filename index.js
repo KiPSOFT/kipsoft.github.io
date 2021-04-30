@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const template = `<div>
                     <p class="container">{{ date }}</p>
                     <p class="container">{{ vaccineCount }}</p>
-                    <p class="container" style="font-size: 10px">Son güncellenme zamanı: {{ lastUpdate }}</p>
+                    <p class="container smalltext">Son güncellenme zamanı: {{ lastUpdate }}</p>
                    </div>`;
     try {
       const result = await fetch("data.json");
@@ -38,3 +38,13 @@ document.addEventListener("DOMContentLoaded", function () {
     el: "#app",
   });
 });
+
+window.onload = () => {
+  const userPrefersDarkScheme = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+  const bodyElement = document.querySelector('body');
+  const darkModeButton = document.querySelector('#toggleDarkMode');
+  bodyElement.className = userPrefersDarkScheme ? "dark" : "light"
+  darkModeButton.addEventListener('click', () => {
+    bodyElement.className  = bodyElement.className === 'dark' ? 'light' : 'dark'
+  })
+}
