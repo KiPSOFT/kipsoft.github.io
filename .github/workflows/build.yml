@@ -26,7 +26,8 @@ jobs:
 
           - name: Commit files
             run: |
-              git config --local user.name  ${{ github.actor }}
+              git config --global user.name ${{ github.actor }}
+              git config --global user.email newkipsoftware@gmail.com
               git add .
               git commit -m 'Build'
 
