@@ -1,0 +1,89 @@
+[v-cloak] {display: none}
+
+html {
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    transition: background 200ms;
+    background: #f0f0f0;
+    height: auto;
+}
+
+.container {
+    transition: all 200ms;
+    font-family: Menlo, Andale Mono, monospace;
+    font-size: 100px;
+    color: #444;
+    line-height: 1;
+    text-shadow: 14px 2px 10px #ccc;
+    text-align: center;
+}
+
+body.dark{
+    background: #444;
+}
+
+body.dark .container{
+    color: #ccc;
+    text-shadow: 5px 5px 5px #444;
+}
+
+body.dark .container a, body.dark .container a:visited {
+    color: inherit;
+}
+
+#toggleDarkMode{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    padding-top: 5px;
+    background: transparent;
+    border: 1px solid #969696;
+    border-radius: 5px;
+}
+
+#toggleDarkMode #darkmodeicon path{
+    fill: #444 !important;
+}
+
+body.dark #toggleDarkMode #darkmodeicon path{
+    fill: #ccc !important;
+}
+
+.bigtext {
+    font-size: 45px;
+}
+
+.smalltext {
+    font-size: 12px;
+}
+
+.forkMe {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+}
+
+@media (max-width: 992px){
+    #toggleDarkMode {
+        top: 40px;
+        left: 40px;
+        transform: scale(2);
+    }
+    .bigtext {
+        font-size: 64px;
+    }
+    .smalltext {
+        font-size: 28px !important;
+    }
+}

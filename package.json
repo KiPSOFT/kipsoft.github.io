@@ -1,0 +1,36 @@
+{
+  "name": "covid19gunlukasisayilari",
+  "version": "0.0.10",
+  "description": "https://www.covid19-asi-sayilari.site",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "serve": "vue-cli-service serve",
+    "build": "vue-cli-service build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KiPSOFT/kipsoft.github.io.git"
+  },
+  "keywords": [
+    "covid19",
+    "aşı",
+    "günlük",
+    "vue"
+  ],
+  "author": "Serkan KOCAMAN aka KiPSOFT",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/KiPSOFT/kipsoft.github.io/issues"
+  },
+  "homepage": "https://github.com/KiPSOFT/kipsoft.github.io#readme",
+  "devDependencies": {
+    "@vue/cli-service": "^4.5.12"
+  },
+  "dependencies": {
+    "chart.js": "^2.9.4",
+    "vue": "^2.6.12",
+    "vue-chartjs": "^3.5.1",
+    "vue-template-compiler": "^2.6.12"
+  }
+}
