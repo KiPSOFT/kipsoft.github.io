@@ -15,7 +15,7 @@ document.addEventListener("DOMContentLoaded", function () {
       const today = new Date().toLocaleDateString("tr-TR", {
         year: "numeric",
         month: "2-digit",
-        day: "numeric",
+        day: "2-digit",
       });
       const val = {
         date: today,
